@@ -2,6 +2,8 @@
 
 The skills every AutoGPT factory session loads. The server's prompts carry the step-by-step instructions; these skills carry the "how" that improves over time.
 
+Sessions clone the public copy, https://github.com/Abhi1992002/agpt-factory-skills, so no GitHub login is needed in the cloud. This folder is the source: after changing it, commit and run `scripts/publish-skills.sh "what changed"` from the factory repo. Never put secrets here.
+
 ```
 skills/
   factory-mode/      router: picks the playbook, sets gates, names the owning skill
