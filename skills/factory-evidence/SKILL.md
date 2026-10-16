@@ -1,6 +1,6 @@
 ---
 name: factory-evidence
-description: Evidence step of the AutoGPT factory. Starts AutoGPT with Docker inside the workspace, proves each done criterion on the running app, and writes evidence/verdict.md PASS or FAIL. Use when the prompt says "Factory step: evidence".
+description: Evidence step of the AutoGPT factory. Starts AutoGPT with Docker inside the workspace, proves each done criterion on the running app, and writes evidence/verdict.md PASS or FAIL (UNPROVEN rows for what the workspace cannot show). Use when the prompt says "Factory step: evidence".
 ---
 
 # factory-evidence
@@ -21,4 +21,4 @@ Calls: AutoGPT `pr-test` for starting the stack (skip its posting steps); pstack
 
 ## Done when
 
-`evidence/verdict.md` starts with `PASS` or `FAIL`, has one row per criterion with the file that proves it, and every FAIL says what you did, saw and expected. The result line carries the verdict and the diff `patch_id`.
+`evidence/verdict.md` starts with `PASS` or `FAIL` and a `Commit:` line, has one row per criterion (PASS, FAIL or UNPROVEN) with the file that proves it, and every FAIL says what you did, saw and expected. FAIL only for what a code change on the branch can fix; a key or service the workspace lacks, or a screen the base branch lacks too, is UNPROVEN with the test that covers it, and does not fail the verdict. After a fix round, re-prove only the rows that failed or whose code changed. The result line carries the verdict and the diff `patch_id`.

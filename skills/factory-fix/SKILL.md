@@ -15,8 +15,9 @@ Calls: the playbook named in `plan.md`; pstack `tdd` when a cheap failing test e
 2. A finding you think is wrong: do not change code for it; write the technical reason in `build.md`. Review reads it.
 3. Small commits in a sensible order, conventional messages with the `AGENTS.md` trailer.
 4. Run the checks the prompt lists and make them green for real. Never skip, xfail or delete tests.
-5. Strip comments that only narrate the code (`no-comments`).
+5. Rehearse every Proof line before you commit, the way evidence will: UI in a real browser (Storybook + Playwright, 1440 and 390, worst-case content), API by real calls, data egress by tests. Evidence must pass the first time.
+6. Strip comments that only narrate the code (`no-comments`).
 
 ## Done when
 
-The branch is pushed, the checks you ran are green, and `build.md` has a `## Round <n>` section listing changes, commits, each finding's outcome and what is left to CI.
+The branch is pushed, the checks you ran are green, and `build.md` has a `## Round <n>` section listing changes, commits, each finding's outcome, the Proof rehearsal table and what is left to CI.

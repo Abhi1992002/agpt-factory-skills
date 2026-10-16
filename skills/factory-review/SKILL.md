@@ -13,9 +13,10 @@ Calls: AutoGPT `pr-review` checklist and severity rubric (skip its fetch/post st
 
 1. Read whole files around each hunk, `plan.md` and `build.md` — not only the diff.
 2. Check plan conformance first: every Change and done criterion, scope creep under 20%.
-3. Report only real problems this diff introduces. `blocker` only when you can name the failure.
-4. Judge `build.md`'s reasons for not fixing earlier findings; drop findings whose reason holds.
-5. Mark a finding **ask** only for a product or design decision a human must make.
+3. Walk each `plan.md` Proof line the way evidence will (390 and 1440, longest text, late data, first open, error states, data egress). A line that would fail is a `blocker`.
+4. Report only real problems this diff introduces. `blocker` only when you can name the failure.
+5. Judge `build.md`'s reasons for not fixing earlier findings; drop findings whose reason holds.
+6. Mark a finding **ask** only for a product or design decision a human must make.
 
 ## Done when
 
